@@ -9,7 +9,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApiVersioning(option =>
 {
     option.AssumeDefaultVersionWhenUnspecified = true;
-    option.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
+    option.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(2, 0);
 });
 var app = builder.Build();
 

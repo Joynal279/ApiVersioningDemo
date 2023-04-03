@@ -14,7 +14,7 @@ namespace ApiVersioningDemo.Controllers
     {
         [HttpGet]
 
-        public IActionResult GetAll()
+        public IActionResult GetInfo()
         {
             return Ok("Get User data from v1 controller");
         }
