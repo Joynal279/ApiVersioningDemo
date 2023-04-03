@@ -1,4 +1,6 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using Microsoft.AspNetCore.Mvc.Versioning;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -11,6 +13,11 @@ builder.Services.AddApiVersioning(option =>
     //Set default api versioning configuration
     option.AssumeDefaultVersionWhenUnspecified = true;
     option.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(2, 0);
+
+    option.ApiVersionReader = ApiVersionReader.Combine(
+        new HeaderApiVersionReader("x-version"),
+        new MediaTypeApiVersionReader("version")
+        );
 });
 var app = builder.Build();
 
