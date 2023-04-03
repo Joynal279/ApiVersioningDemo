@@ -9,14 +9,13 @@ namespace ApiVersioningDemo.Controllers
 {
     [Route("api/user/[action]")]
     [ApiController]
-    [ApiVersion("1")]
-    public class UserV1Controller : ControllerBase
+    [ApiVersion("2")]
+    public class Userv2Controller : ControllerBase
     {
         [HttpGet]
-
-        public IActionResult GetAll()
+        public IActionResult GetInfo()
         {
-            return Ok("Get User data from v1 controller");
+            return Ok("Get User data from v2 controller");
         }
     }
 }
