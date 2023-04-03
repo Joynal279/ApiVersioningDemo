@@ -8,6 +8,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddApiVersioning(option =>
 {
+    //Set default api versioning configuration
     option.AssumeDefaultVersionWhenUnspecified = true;
     option.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(2, 0);
 });

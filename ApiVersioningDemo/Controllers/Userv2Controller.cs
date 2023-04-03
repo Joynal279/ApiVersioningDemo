@@ -7,7 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiVersioningDemo.Controllers
 {
-    [Route("api/user/[action]")]
+    //Route for URI versioning
+    [Route("api/v{version:apiVersion}/user/[action]")]
+    //[Route("api/user/[action]")]
     [ApiController]
     [ApiVersion("2")]
     public class Userv2Controller : ControllerBase
