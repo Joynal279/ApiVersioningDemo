@@ -15,6 +15,7 @@ builder.Services.AddApiVersioning(option =>
     option.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(2, 0);
 
     option.ApiVersionReader = ApiVersionReader.Combine(
+        new QueryStringApiVersionReader("api-version"),
         new HeaderApiVersionReader("x-version"),
         new MediaTypeApiVersionReader("version")
         );
